@@ -1,5 +1,4 @@
 node("jenkins-mahwahtech-test") {
-    git branch: 'main', url: 'https://github.com/ryadama9/KanikoTest.git'
         stage("Build"){
             container(name: 'build'){
                 script {
