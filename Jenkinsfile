@@ -4,7 +4,9 @@ node("jenkins-mahwahtech-test") {
             container(name: 'buildah'){
                 script {
                     //sleep 99999
-                    sh "buildah build -t buildah-test:1 ."
+                    sh "buildah build -t buildah-test:2 ."
+                    sh "buildah tag buildah-test:2 buildah-test:latest"
+                    sh 'buildah push buildah-test:latest quay.io/volvocars/test-kaniko:latest'
                     //sh "/kaniko/executor --dockerfile Dockerfile --context `pwd` --destination quay.io/volvocars/test-kaniko:latest"
                     }
                 }
