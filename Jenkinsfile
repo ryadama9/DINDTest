@@ -1,7 +1,7 @@
 node("jenkins-mahwahtech-test") {
   git branch: 'main', url: 'https://github.com/ryadama9/DINDTest.git'
         stage("Build"){
-          withCredentials([usernamePassword(credentialsId: 'quay-robot-cdlsdevopssun', passwordVariable: '$dockerKey', usernameVariable: 'dockerUser')]) {
+          withCredentials([usernamePassword(credentialsId: 'quay-robot-cdlsdevopssun', passwordVariable: 'dockerKey', usernameVariable: 'dockerUser')]) {
             container(name: 'buildah'){
                 script {
                     //sleep 99999
