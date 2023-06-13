@@ -5,7 +5,6 @@ node("jenkins-mahwahtech-test") {
                 script {
                     //sleep 99999
                     sh "buildah build -t buildah-test:1 ."
-                    sleep 9999
                     //sh "/kaniko/executor --dockerfile Dockerfile --context `pwd` --destination quay.io/volvocars/test-kaniko:latest"
                     }
                 }
